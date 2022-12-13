@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    --dark-green: #14532d;
+    --primary-green: #73a580;
+    --green: #4ade80;
+    --light-green: #bbf7d0;
+    --yellow: #e1ad01;
+    --violet: #3e363f;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-green);
+}
+
+
+
+.blur{
+    filter: blur(8px);   
+    pointer-events: none;
+}
+
+
+h1{
+    text-align: center;
+    padding: .8em;
+    color:forestgreen;
+    font-size: 3.2rem;
+}
+
+.wrapper{
+    text-align: end;
+    padding: 1.6em 4em;
+}
+
+.wrapper button{
+
+    height: 50px;
+    width: 110px;
+    background-color:var(--green);
+    color: var(---green);
+    font-size: 1.6rem;
+    border: 1px solid rebeccapurple;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+main{
+    padding: 4em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 3em;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em;
+    border: 1px solid grey;
+}
+
+.card p {
+    font-size: 2.4rem;
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 60px;
+    margin: 0 10px;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.switch input{
+    display: none;
+}
+
+.slider::before{
+    position: absolute;
+    content: "";
+    height: 32px;
+    width: 32px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+input:checked + .slider{
+    background-color: var(--green);
+}
+
+input:checked + .slider::before{
+    transform: translateX(28px);
+}
+
+.card .wrapper button{
+    background-color: red;
+    color: white;
+}
+
+.pop-up{
+    height: 80%;
+    width: 80%;
+    background-color: var(--green);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 3.2em;
+
+    border-radius: 8px;
+    
+    z-index: -1; 
+    opacity: 0; 
+    pointer-events: none;
+    transition: opacity 500ms;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.active{
+    pointer-events:all;
+    opacity: 1;
+    z-index: 2;
+    transition: opacity 500ms;
+}
+
+.pop-up .close{
+    position: absolute;
+    top: 0;
+    right: 12px;
+    cursor: pointer;
+    color: red;
+    font-size: 3rem;
+    user-select: none;
+}
+
+
+.pop-up .status .switch input:checked + .slider{
+    background-color: #ccc;
+}
+
+.pop-up .status .switch input:checked + .slider::before{
+    background-color: rgb(28, 230, 28);
+}
+
+
+.pop-up span{
+    font-size: 3.2rem;
+    color: black
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.pop-up  input{
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding-left: .6em;
+    font-size: 2rem;
+}
+
+.pop-up input:focus{
+    outline: none;
+}
+
+.pop-up .submit{
+    text-align: start;
+    padding: 0;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="./index.js" defer></script>
+    <title>E-library</title>
+</head>
+<body>
+    <header>
+        <h1>E-Library</h1>
+        <div class="wrapper">
+            <button id="add">Add Book</button>
+        </div>
+    </header>
+
+    <div class="pop-up" id="popUp">
+
+        <span class="close">x</span>
+
+        <form method="post">
+            <label for="name" class="input">
+                <span>Title</span>
+                <input type="text" id="name" required>
+            </label>
+
+            <label for="author" class="input">
+                <span>Author</span>
+                <input type="text" id="author" required>
+            </label>
+
+            <label for="pages" class="input">
+                <span>Pages</span>
+                <input type="number" name="pages" required>
+            </label>
+
+            <div class="status input">
+                <span>Read Status</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="wrapper submit">
+                <button id="submit" type="submit">Add Book</button>
+            </div>
+        </form>
+    </div>
+
+    <main>
+        
+    </main>
+</body>
+</html>
