@@ -5,12 +5,15 @@ let main = document.querySelector("main");
 let addBtn = document.getElementById("add");
 let popUp = document.getElementById("popUp");
 let form = document.querySelector("form");
+let nameField = document.querySelector("#name");
+let emailField = document.querySelector("#email")
 let closeBtn = document.getElementsByClassName("close")[0];
 
 form.addEventListener("submit", addBookToLibrary);
 addBtn.addEventListener("click", openForm);
 closeBtn.addEventListener("click", closeForm);
-
+nameField.addEventListener("input", validateNameField)
+emailField.addEventListener("input", validateEmailField)
 
 class Book {
   constructor(title, author, pages, readStatus) {
@@ -22,10 +25,30 @@ class Book {
   }
 }
 
+function validateNameField(){
+  console.log(nameField.validity.valueMissing)
+  if(nameField.validity.valueMissing){
+    nameField.setCustomValidity("nope you cannot not do this")
+  }else{
+    nameField.setCustomValidity("");
+  }
+}
+
+function validateEmailField(){
+  console.log(emailField.validity.typeMismatch)
+  if(emailField.validity.typeMismatch){
+    emailField.setCustomValidity("nope you cannot not do this")
+  }else{
+    emailField.setCustomValidity("")
+  }
+}
+
 function openForm() {
   popUp.classList.add("active");
   main.classList.add("blur");
   addBtn.classList.toggle("blur");
+
+  validateNameField();
 }
 
 function closeForm() {

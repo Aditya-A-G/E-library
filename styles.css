@@ -213,3 +213,8 @@ form{
     text-align: start;
     padding: 0;
 }
+
+
+input:invalid:required{
+    border: 3px solid red;
+}
